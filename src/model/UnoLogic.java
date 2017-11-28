@@ -130,4 +130,14 @@ public class UnoLogic implements IGameLogic {
 	public ArrayList<IPlayer> getPlayers() {
 		return playerManager.getPlayers();
 	}
+
+	@Override
+	public int getDiscardPileSize() {
+		return cardManager.getDiscardPileSize();
+	}
+
+	@Override
+	public int getActualDeckSize() {
+		return cardManager.getActualDeckSize();
+	}
 }

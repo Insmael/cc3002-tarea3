@@ -114,4 +114,14 @@ public class UnoCardPilesManager implements ICardPilesManager {
     return drawnCards;
   }
 
+@Override
+public int getDiscardPileSize() {
+	return discarded.getSize();
+}
+
+@Override
+public int getActualDeckSize() {
+	return deck.getSize();
+}
+
 }

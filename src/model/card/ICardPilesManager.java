@@ -52,4 +52,8 @@ public interface ICardPilesManager {
    */
   ArrayList<ICard> addCardsToPlayer(IPlayer player, int number);
 
+int getDiscardPileSize();
+
+int getActualDeckSize();
+
 }

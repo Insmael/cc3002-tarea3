@@ -126,4 +126,8 @@ public interface IGameLogic {
    */
   void announceWinner(IController ctrl);
 
+int getDiscardPileSize();
+
+int getActualDeckSize();
+
 }
