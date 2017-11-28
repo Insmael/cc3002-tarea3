@@ -12,8 +12,8 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class TextMessageWindow {
-	private Stage stage = new Stage();
-	Group root = new Group();
+	protected Stage stage = new Stage();
+	protected Group root = new Group();
 	
 	public void defineTitle(String title) {
 		stage.setTitle(title);
