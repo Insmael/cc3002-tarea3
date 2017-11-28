@@ -1,7 +1,10 @@
 package model;
 
+import java.util.ArrayList;
+
 import controller.IController;
 import model.card.type.ICard;
+import model.player.Direction;
 import model.player.type.IPlayer;
 
 /**
@@ -84,6 +87,21 @@ public interface IGameLogic {
    * Inverts the direction of the game
    */
   void invertDirection();
+  
+  /**
+   * Guives the direction of the game.
+   * 
+   * @Return Direction the direction of the game.
+   */
+  
+  Direction getDirection();
+  
+  /**
+   * Guives the list of the currents players of the game.
+   * 
+   * @return an array list with the players.
+   */
+  ArrayList<IPlayer> getPlayers();
 
   /**
    * Plays a card, executing its action and putting it in the discard pile.

@@ -66,4 +66,9 @@ public class UnoPlayerManager implements IPlayerManager {
     player %= players.size();
     return player;
   }
+
+@Override
+public Direction getDirection() {
+	return direction;
+}
 }

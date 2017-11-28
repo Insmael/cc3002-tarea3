@@ -34,4 +34,11 @@ public interface IPlayerManager {
    */
   void skipPlayer();
 
+  /**
+   * Guives the direction of the game.
+   * 
+   * @return the direction of the game.
+   */
+  Direction getDirection();
+
 }

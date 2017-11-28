@@ -7,6 +7,7 @@ import model.card.ICardPilesManager;
 import model.card.UnoCardPilesManager;
 import model.card.deck.IDeckStrategy;
 import model.card.type.ICard;
+import model.player.Direction;
 import model.player.IPlayerListBuilder;
 import model.player.IPlayerManager;
 import model.player.UnoPlayerManager;
@@ -119,4 +120,14 @@ public class UnoLogic implements IGameLogic {
   public void announceWinner(IController ctrl) {
     ctrl.showMessage(getCurrentPlayer() + " ha ganado!");
   }
+
+	@Override
+	public Direction getDirection() {
+		return playerManager.getDirection();
+	}
+	
+	@Override
+	public ArrayList<IPlayer> getPlayers() {
+		return playerManager.getPlayers();
+	}
 }

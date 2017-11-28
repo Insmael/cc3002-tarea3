@@ -15,7 +15,9 @@ import model.player.type.HumanPlayer;
 import model.player.type.IPlayer;
 import view.card.CardImages;
 import view.javafx.HandSection;
-
+/* clase que solo presenta la sección de la mano, de modo que aquí es donde 
+ * se mantienen las pruebas para asegurar que esta sección funcione. 
+ */
 public class HandSectionTest extends Application {
   
 	@Override     
