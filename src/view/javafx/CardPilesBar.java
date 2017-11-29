@@ -32,7 +32,7 @@ public class CardPilesBar implements ICardPilesBar {
 		FileInputStream inputStream;
 		try {
 			//enlazar el archivo correspondiente con el inputStream.
-			inputStream = new FileInputStream("assets/UnoCards/blue/0.png");
+			inputStream = new FileInputStream("assets/UnoCards/none/back.png");
 			mazo = new ImageView(new Image(inputStream));
 
 			mazo.setFitHeight(100);
