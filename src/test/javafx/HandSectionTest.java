@@ -25,8 +25,8 @@ public class HandSectionTest extends Application {
 		
 		
 		CardImages cardViews = new CardImages();
-		HandSection handSection = new HandSection(cardViews);
 		IPlayer player = new HumanPlayer("jugador de prueba");
+		HandSection handSection = new HandSection(null, null, cardViews);
 		IDeckStrategy deckBuilder = new NormalUnoDeck();
 		ICardPile deck = new CompositeCardPile();
 		deck.pushCards(deckBuilder.createDeck());

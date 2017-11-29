@@ -12,7 +12,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import model.IGameLogic;
-import veiw.javafx.ICardPilesBar;
+import view.FXView;
 import view.card.CardImages;
 
 public class CardPilesBar implements ICardPilesBar {
@@ -20,8 +20,10 @@ public class CardPilesBar implements ICardPilesBar {
 	private IGameLogic game;
 	private CardImages views;
 	private ImageView mazo;
+	private FXView view;
 	
-	public CardPilesBar(IGameLogic game, CardImages cardViews) {
+	public CardPilesBar(IGameLogic game, FXView fxView, CardImages cardViews) {
+		this.view = fxView;
 		grid = new GridPane();
 		grid.setMaxSize(40, 40);
 		this.game = game;
@@ -40,7 +42,7 @@ public class CardPilesBar implements ICardPilesBar {
 				@Override
 				public void handle(MouseEvent event) {
 					game.drawOneCard(game.getCurrentPlayer());
-					update();
+					view.updateAll();
 					
 				}
 				

@@ -66,7 +66,7 @@ public class TextMessageWindow {
 	public void create() {
 		generateOkBotton();
 		generateLine();
-		Scene scene = new Scene(root, 300, 150);
+		Scene scene = new Scene(root, 400, 200);
 		stage.setScene(scene);
 	}
 	

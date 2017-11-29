@@ -4,6 +4,7 @@ import controller.IController;
 import model.IGameLogic;
 import model.card.type.Color;
 import model.card.type.ICard;
+import model.card.type.NullCard;
 
 /**
  * Class that relies on human input to retrieve cards from the hand.
@@ -28,7 +29,7 @@ public class HumanPlayer extends AbstractPlayer {
     if (num == getHandSize()) {
       return game.drawOneCard(this);
     } else {
-      return getCardFromHand(num);
+    	return getCardFromHand(num);
     }
   }
 

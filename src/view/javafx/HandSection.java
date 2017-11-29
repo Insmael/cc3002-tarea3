@@ -1,9 +1,15 @@
 package view.javafx;
 
+import java.util.ArrayList;
+
+import javafx.event.EventHandler;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import model.IGameLogic;
 import model.card.type.ICard;
 import model.player.type.IPlayer;
+import view.FXView;
 import view.card.CardImages;
 
 /**
@@ -15,14 +21,20 @@ import view.card.CardImages;
 public class HandSection {
 	private HBox data;
 	private CardImages images;
+	private IGameLogic game;
+	private FXView view;
 	
 	/**
 	 * the constructor of the class, it has as a parameter a cardImage class,
 	 * from where it takes the differents images to make the imageview of 
 	 * each card of the hand.
+	 * @param game 
+	 * @param fxView 
 	 * @param cardImages a CardImages object
 	 */
-	public HandSection(CardImages cardImages) {
+	public HandSection(IGameLogic game, FXView fxView, CardImages cardImages) {
+		this.view = fxView;
+		this.game = game;
 		data = new HBox();
 		images = cardImages;
 	}
@@ -31,12 +43,28 @@ public class HandSection {
 		// vaciar el nodo HBox para guardar la nueva mano.
 		data.getChildren().clear();
 		// para cada carta.
-		for (ICard card : player.getHand()) {
+		
+		ArrayList<ICard> hand = player.getHand();
+		for (int i = 0; i < hand.size(); i++) {
+			int j = i;
+			ICard card = hand.get(i);
 			// conseguir la imageview de la carta.
 			ImageView cardView = images.getView(card.toString());
 			//ajustar la imageview.
 			cardView.setFitHeight(100);
 			cardView.setPreserveRatio(true);
+			cardView.setOnMouseClicked(new EventHandler<MouseEvent>() {
+
+				@Override
+				public void handle(MouseEvent arg0) {
+					if (!game.hasEnded()) {
+							System.out.println(j);
+						}
+						view.updateAll();
+					
+				}
+				
+			});
 			// agregarla al HBox data para su posterior uso.
 			data.getChildren().add(cardView);
 		}

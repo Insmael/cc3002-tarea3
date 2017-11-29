@@ -19,6 +19,8 @@ public class PlayersBar implements IPlayersBar {
 	
 	public PlayersBar(IGameLogic game) {
 		grid = new GridPane();
+		grid.setHgap(10);
+		grid.setVgap(10);
 		this.game = game;
 		players = game.getPlayers();
 		playerNodes = new ArrayList<Text>();
@@ -41,7 +43,7 @@ public class PlayersBar implements IPlayersBar {
 			grid.add(handSizes.get(i), j++, 2);
 		}
 		int index = players.indexOf(game.getCurrentPlayer());
-		grid.add(new Text("Current Player"), index*2, 0);
+		grid.add(new Text("Current\nPlayer"), index*2, 0);
 		
 	}
 

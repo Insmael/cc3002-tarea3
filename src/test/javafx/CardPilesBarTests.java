@@ -16,9 +16,9 @@ import model.player.UnoPlayerListBuilder;
 import model.player.type.HumanPlayer;
 import model.player.type.IPlayer;
 import model.player.type.RandomPlayer;
-import veiw.javafx.ICardPilesBar;
 import view.card.CardImages;
 import view.javafx.CardPilesBar;
+import view.javafx.ICardPilesBar;
 
 public class CardPilesBarTests extends Application {
 	
@@ -43,7 +43,7 @@ public class CardPilesBarTests extends Application {
 		
 		//crear la barra de status de los jugadores
 	    CardImages cardViews = new CardImages();
-		ICardPilesBar cardPilesBar = new CardPilesBar(game, cardViews);
+		ICardPilesBar cardPilesBar = new CardPilesBar(game, null, cardViews);
 		
 		//create 
 	    BorderPane root = new BorderPane();
